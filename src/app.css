@@ -45,7 +45,9 @@ html {
     transition: color 0.15s ease, border-color 0.15s ease;
     transition: .3s;
 }
-
+.idrange{
+    width: 1000px;
+}
 
 .pokecard:hover,
 .pokecard:focus,
