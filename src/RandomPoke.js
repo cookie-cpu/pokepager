@@ -5,7 +5,7 @@ import PokemonCard from './PokemonCard';
 export default function RandomPoke() {
 
     const num = Math.floor(Math.random() * 905)
-    const [query, setQuery] = useState("bulbasaur")
+    const [query, setQuery] = useState(1)
     const [pokemon, setPokemon] = useState([]);
     const [loading, setLoading] = useState(true);
     const baseURL = `https://pokeapi.co/api/v2/pokemon/${query}`;
@@ -20,6 +20,7 @@ export default function RandomPoke() {
           // console.log("render!!!");
           setPokemon(res.data)
           console.log(baseURL);
+          console.log(`ID:${res.data.id}, ${res.data.name.toUpperCase()}`);
         })
     
       },[baseURL])
