@@ -12,12 +12,12 @@ function App() {
 
   return (
     <>
-          {!clicked ? <button className="button" onClick={handleClick}>Show</button> : <button className="button" onClick={handleClick}>Hide</button>}
+          {/* {!clicked ? <button className="button" onClick={handleClick}>Show</button> : <button className="button" onClick={handleClick}>Hide</button>} */}
 
-    <div className="grid">
+      <div className="grid">
        {/* <Pager/> */}
-       
-       {clicked ? <RandomPoke />: null}
+       <RandomPoke />
+       {/* {clicked ? <RandomPoke />: null} */}
 
     </div>
      

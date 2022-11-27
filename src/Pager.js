@@ -21,7 +21,7 @@ function Pager() {
       setNextPageURL(res.data.next)
       setPrevPageURL(res.data.previous)
       setPokemon(res.data.results.map(p => p.name))
-      console.log(res.data);
+      console.log(res.data.results);
     })
 
     //cleanup function

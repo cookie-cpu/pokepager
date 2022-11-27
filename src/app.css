@@ -11,8 +11,14 @@ html {
     flex-wrap: wrap;
     max-width: 85%;
 }
-
+.image-div{
+    display: flex;
+    justify-content: space-evenly;
+}
 .artwork{
+    width: 25%;
+}
+.sprite{
     width: 25%;
 }
 .button {
@@ -22,8 +28,6 @@ html {
     border-radius: 15px;
     box-shadow: 0 7px #999;
 }
-
-.button:hover {}
 
 .button:active {
     box-shadow: 0 3px #666;
@@ -45,6 +49,7 @@ html {
     transition: color 0.15s ease, border-color 0.15s ease;
     transition: .3s;
 }
+
 .idrange{
     width: 1000px;
 }

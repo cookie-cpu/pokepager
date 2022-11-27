@@ -1,10 +1,11 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios';
 import PokemonCard from './PokemonCard';
+import debounce from "lodash/debounce";
 
 export default function RandomPoke() {
 
-    const num = Math.floor(Math.random() * 905)
+    // const num = Math.floor(Math.random() * 905)
     const [query, setQuery] = useState(1)
     const [pokemon, setPokemon] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -19,26 +20,27 @@ export default function RandomPoke() {
           // console.log(res.data);
           // console.log("render!!!");
           setPokemon(res.data)
-          console.log(baseURL);
-          console.log(`ID:${res.data.id}, ${res.data.name.toUpperCase()}`);
+          // console.log(baseURL);
+          // console.log(`ID:${res.data.id}, ${res.data.name.toUpperCase()}`);
         })
     
       },[baseURL])
 
      
 
-  if (loading) return "Loading"
-// setQuery(event.target.value)
+  if (loading) return <h1>LOADING</h1>
+
   return (
-    
       <>
+
         <form>
-          <label>Pick a pokemon between 1 and 905 </label>
-          <input className='idrange' type="range" min="1" max="904" placeholder="Enter Poke ID"  onMouseUp={event => {setQuery(event.target.value)}}/>
-          
+          {/* <label>Pick a pokemon between 1 and 905 </label> */}
+          <input className='idrange' onDoubleClick={e=>setQuery(e.target.value)}/>
+
         </form>
          
          <PokemonCard pokemon={pokemon}/>
+         
       </>
   )
 }
